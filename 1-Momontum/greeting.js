@@ -1,9 +1,9 @@
 const form = document.querySelector(".js-form")
-const greeting = document.querySelector(".js-greetings")
 const input = form.querySelector("input")
+const greeting = document.querySelector(".js-greetings")
 
 const USER_LS = "currentUser"
-const SHOWING_CN = "showing"
+const SHOWING_CN = "is-visible"
 
 function saveName(text){
   localStorage.setItem(USER_LS, text)
