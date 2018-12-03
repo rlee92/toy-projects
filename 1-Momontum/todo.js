@@ -4,6 +4,7 @@ const toDoList = document.querySelector(".js-toDoList")
 
 const TODOS_LS = "toDos"
 let toDos = []
+let count = 0
 
 
 function deleteToDo(event) {
@@ -15,6 +16,7 @@ function deleteToDo(event) {
   })
   toDos = cleanToDos
   saveToDos()
+  count++
 }
 
 function saveToDos(){
@@ -25,7 +27,7 @@ function paintToDo(text) {
   const li = document.createElement("li")
   const delBtn = document.createElement("button")
   const span = document.createElement("span")
-  const newId = toDos.length+1
+  const newId = toDos.length+count+1
   delBtn.innerText = "X"
   delBtn.addEventListener("click", deleteToDo)
   span.innerText = text
