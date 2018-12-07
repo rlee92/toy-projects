@@ -1,15 +1,18 @@
 const clockContainer = document.querySelector(".js-clock")
-const clockTitle = document.querySelector("h1")
+const clockTitle = document.querySelector(".clock-title")
 
-function getTime(){
+var getTime = _ => {
   const date = new Date()
-  const minutes = date.getMinutes()
   const hours = date.getHours()
+  const hr = hours < 10 ? `0${hours}` : hours
+  const minutes = date.getMinutes()
+  const min = minutes < 10 ? `0${minutes}` : minutes
   const seconds = date.getSeconds()
-  clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes }:${seconds < 10 ? `0${seconds}` : seconds}`
+  const sec = seconds < 10 ? `0${seconds}` : seconds
+  clockTitle.innerText = `${hr} : ${min} : ${sec}`
 }
 
-function init() {
+var init = _ => {
   getTime()
   setInterval(getTime, 1000)
 }

@@ -11,19 +11,21 @@
 <body>
   <section class="center">
     <div class="js-clock">
-      <h1>00:00</h1>
+      <h1 class="clock-title"> 00:00 </h1>
     </div>
     <form class="js-form form">
       <input type="text" placeholder="What is your name?">
     </form>
     <h4 class="js-greetings greetings"></h4>
   </section>
-  <form class="js-toDoForm" action="index.html" method="post">
+
+  <form class="js-toDoForm toDo" action="index.html" method="post">
     <input type="text" name="" placeholder="Write a to do">
   </form>
-  <ul class="js-toDoList">
-  </ul>
-  <span class="js-weather"></span>
+
+  <ul class="js-toDoList list"></ul>
+
+  <span class="js-weather weather"></span>
   <script type="text/javascript" src="js/clock.js"></script>
   <script type="text/javascript" src="js/greeting.js"></script>
   <script type="text/javascript" src="js/todo.js"></script>
