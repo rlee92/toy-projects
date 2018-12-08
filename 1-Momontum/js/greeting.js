@@ -1,43 +1,43 @@
 const form = document.querySelector(".js-form")
 const input = form.querySelector("input")
-const greeting = document.querySelector(".js-greetings")
+const greeting = document.querySelector(".js-greeting")
 
 const userName = "currentUser"
 const isVisible = "is-visible"
 
-var saveName = (name) => {
+let saveName = (name) => {
   localStorage.setItem(userName, name)
 }
 
-var handleSubmit = (event) => {
+let handleGreetingSubmit = (event) => {
   event.preventDefault()
   const currVal = input.value
-  paintGreeting(currVal)
+  getGreetingMsg(currVal)
   saveName(currVal)
 }
 
-var askForName = () => {
+let askForName = _ => {
   form.classList.add(isVisible)
-  form.addEventListener("submit", handleSubmit)
+  form.addEventListener("submit", handleGreetingSubmit)
 }
 
-var paintGreeting = (text) => {
+let getGreetingMsg = (text) => {
   form.classList.remove(isVisible)
   greeting.classList.add(isVisible)
   greeting.innerText = `Hello,  ${text}`
 }
 
-var loadName = _ => {
+let loadName = _ => {
   const currUser = localStorage.getItem(userName)
   if(currUser === null) {
     askForName()
   } else {
-    paintGreeting(currUser)
+    getGreetingMsg(currUser)
   }
 }
 
-var init = _ => {
+let initGreeting = _ => {
   loadName()
 }
 
-init()
+initGreeting()
