@@ -1,68 +1,68 @@
-const toDoForm = document.querySelector(".js-toDoForm")
+const toDoForm = document.querySelector(".js-todoForm")
 const toDoInput = toDoForm.querySelector("input")
-const toDoList = document.querySelector(".js-toDoList")
+const toDoList = document.querySelector(".js-todoList")
 
-const TODOS_LS = "toDos"
-let toDos = []
+const TODO_ITEMS = "todo_items"
+let todo_list = []
 let count = 0
 
 
-function deleteToDo(event) {
+let deleteToDo = (event) =>  {
   const btn = event.target
   const li = btn.parentNode
   toDoList.removeChild(li)
-  const cleanToDos = toDos.filter(function(toDo){
+  const cleanToDos = todo_list.filter(function(toDo){
     return toDo.id !== parseInt(li.id)
   })
-  toDos = cleanToDos
+  todo_list = cleanToDos
   saveToDos()
   count++
 }
 
-function saveToDos(){
-  localStorage.setItem(TODOS_LS, JSON.stringify(toDos))
+let saveToDos = _ =>{
+  localStorage.setItem(TODO_ITEMS, JSON.stringify(todo_list))
 }
 
-function paintToDo(text) {
+let printTodo = (text) => {
   const li = document.createElement("li")
   const delBtn = document.createElement("button")
   const span = document.createElement("span")
-  const newId = toDos.length+count+1
-  delBtn.innerText = "X"
+  const newId = todo_list.length+count+1
+  delBtn.innerText = "Delete"
   delBtn.addEventListener("click", deleteToDo)
   span.innerText = text
   li.appendChild(delBtn)
   li.appendChild(span)
   li.id = newId
   toDoList.appendChild(li)
-  const toDoObj = {
+  const todoObj = {
     text: text,
     id: newId
   }
-  toDos.push(toDoObj)
+  todo_list.push(todoObj)
   saveToDos()
 }
 
-function handleSubmit(event){
+let handleTodoSubmit = (event) => {
   event.preventDefault()
-  const currentValue = "  "+toDoInput.value
-  paintToDo(currentValue)
+  const currentValue = "  " + toDoInput.value
+  printTodo(currentValue)
   toDoInput.value = ""
 }
 
-function loadToDos(){
-  const loadedToDos = localStorage.getItem(TODOS_LS)
-  if(loadedToDos !== null) {
-    const parsedToDos = JSON.parse(loadedToDos)
-    parsedToDos.forEach(function (toDo){
-      paintToDo(toDo.text)
+let loadToDos = _ => {
+  const loadedTodos = localStorage.getItem(TODO_ITEMS)
+  if(loadedTodos !== null) {
+    const parsedToDos = JSON.parse(loadedTodos)
+    parsedToDos.forEach((toDo) => {
+      printTodo(toDo.text)
     })
   }
 }
 
 
-function init(){
+let initTodo = _ => {
   loadToDos()
-  toDoForm.addEventListener("submit", handleSubmit)
+  toDoForm.addEventListener("submit", handleTodoSubmit)
 }
-init()
+initTodo()

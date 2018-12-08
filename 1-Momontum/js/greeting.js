@@ -2,11 +2,11 @@ const form = document.querySelector(".js-form")
 const input = form.querySelector("input")
 const greeting = document.querySelector(".js-greeting")
 
-const userName = "currentUser"
-const isVisible = "is-visible"
+const USER_NAME = "currentUser"
+const IS_VISIBLE = "is-visible"
 
 let saveName = (name) => {
-  localStorage.setItem(userName, name)
+  localStorage.setItem(USER_NAME, name)
 }
 
 let handleGreetingSubmit = (event) => {
@@ -17,18 +17,18 @@ let handleGreetingSubmit = (event) => {
 }
 
 let askForName = _ => {
-  form.classList.add(isVisible)
+  form.classList.add(IS_VISIBLE)
   form.addEventListener("submit", handleGreetingSubmit)
 }
 
 let getGreetingMsg = (text) => {
-  form.classList.remove(isVisible)
-  greeting.classList.add(isVisible)
+  form.classList.remove(IS_VISIBLE)
+  greeting.classList.add(IS_VISIBLE)
   greeting.innerText = `Hello,  ${text}`
 }
 
 let loadName = _ => {
-  const currUser = localStorage.getItem(userName)
+  const currUser = localStorage.getItem(USER_NAME)
   if(currUser === null) {
     askForName()
   } else {
