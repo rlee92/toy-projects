@@ -3,21 +3,21 @@ const API_KEY = "7bf102fe1942d253656109ee0fd9a50a"
 const COORDS = "coords"
 
 
-function getWeather(lat, long){
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`).then(function(response){
+let getWeather = (lat, long) => {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`).then((response) => {
     return response.json()
-  }).then(function(json){
+  }).then((json) => {
     const temperature = json.main.temp
     const place = json.name
-    weather.innerText = `${temperature} @ ${place}`
+    weather.innerText = `${temperature}°C \n ${place}`
   })
 }
 
-function saveCoords(coordsObj) {
+let saveCoords = (coordsObj) => {
   localStorage.setItem(COORDS, JSON.stringify(coordsObj))
 }
 
-function handleGeoSuccess(position){
+let handleGeoSuccess = (position) => {
   const latitude = position.coords.latitude
   const longitude = position.coords.longitude
   const coordsObj = {
@@ -28,17 +28,17 @@ function handleGeoSuccess(position){
   getWeather(latitude, longitude)
 }
 
-function handleGeoError(){
+let handleGeoError = _ =>{
   console.log("can't get")
 }
 
 
-function askForCoords(){
+let askForCoords = _ =>{
   navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError)
 }
 
 
-function loadCoords(){
+let loadCoords = _ => {
   const loadedCoords = localStorage.getItem(COORDS)
   if(loadedCoords === null){
     askForCoords()
@@ -48,8 +48,8 @@ function loadCoords(){
   }
 }
 
-function init(){
+let initWeather = _ => {
   loadCoords()
 
 }
-init()
+initWeather()
