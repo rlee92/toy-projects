@@ -1,5 +1,4 @@
 const clockContainer = document.querySelector(".js-clock")
-const clockTitle = document.querySelector(".clock-title")
 
 let getTime = _ => {
   const date = new Date()
@@ -7,9 +6,10 @@ let getTime = _ => {
   const HR = hours < 10 ? `0${hours}` : hours
   const minutes = date.getMinutes()
   const MIN = minutes < 10 ? `0${minutes}` : minutes
-  const seconds = date.getSeconds()
-  const SEC = seconds < 10 ? `0${seconds}` : seconds
-  clockTitle.innerText = `${HR} : ${MIN} : ${SEC}`
+  // const seconds = date.getSeconds()
+  // const SEC = seconds < 10 ? `0${seconds}` : seconds
+  // clockTitle.innerText = `${HR} : ${MIN} : ${SEC}`
+  clockContainer.innerText = `${HR} : ${MIN}`
 }
 
 let initClock = _ => {
