@@ -1,64 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial');
-@import "center.css";
 @import "clock.css";
-@import "location.css";
+@import "greeting.css";
 @import "todo.css";
 @import "weather.css";
+@import "image.css"; 
 
-body,
+/* @import "location.css";
+*/
+
 html {
+  background: #333333;
   overflow: hidden;
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: flex;
   font-family: 'Questrial', sans-serif;
-  font-size: 40px;
-  color: white;
-}
-html {
-  background: #333333;
-}
-
-/* Remove li bullets  */
-ul{
-  list-style-type: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+  font-size: 30px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
   margin: 0;
+  padding: 0;
+  color: white;
+  align-items: center;
+  justify-content: center;
 }
-.form,
-.greetings {
-  display: none;
+
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+  border-color: white;
+  color: white;
+  width: 318px;
+  text-align: center;
 }
-.showing {
-  display: block;
+
+input::placeholder {
+  color: white;
+  opacity: 0.7;
+  text-align: center;
+
+}
+
+input:focus::placeholder {
+    opacity: 0;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .is-visible {
   display: block;
-}
-
-@keyframes fadeIn {
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-}
-.bgImage{
-  position: absolute;
-  top:0;
-  bottom:0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  animation: fadeIn 1s linear;
 }

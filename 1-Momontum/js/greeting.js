@@ -16,7 +16,7 @@ let handleGreetingSubmit = (event) => {
   saveName(currVal)
 }
 
-let askForName = _ => {
+let requestName = _ => {
   form.classList.add(IS_VISIBLE)
   form.addEventListener("submit", handleGreetingSubmit)
 }
@@ -30,7 +30,7 @@ let getGreetingMsg = (text) => {
 let loadName = _ => {
   const currUser = localStorage.getItem(USER_NAME)
   if(currUser === null) {
-    askForName()
+    requestName()
   } else {
     getGreetingMsg(currUser)
   }

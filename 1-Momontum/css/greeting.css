@@ -1,23 +1,19 @@
-.center {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.center .name__input {
+.js-form {
   appearance: none;
   background: none;
   border: none;
   color: white;
   font-size: 36px;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
   margin-bottom: 20px;
-}
-.center .name__input::placeholder {
-  color: white;
-  opacity: 0.7;
+  width: 318px;
+  float: left;
 }
 
+.nameInput {
+  font-size: 30px;
+}
+
+/*
 .center .name__input:focus,
 .center .name__input:active {
   outline: none;
@@ -30,4 +26,4 @@
 
 .center .name {
   margin-bottom: 30px;
-}
+} */

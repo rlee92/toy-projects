@@ -1,12 +1,15 @@
 .list {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.toDo {
-  font-size: 22px;
+.taskInput{
+  font-size: 20px;
 }
 
-.toDo__button {
-  margin-right: 10px;
-  cursor: pointer;
+/* Remove li bullets  */
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
