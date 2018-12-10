@@ -28,7 +28,7 @@ let printTodo = (text) => {
   const delBtn = document.createElement("button")
   const span = document.createElement("span")
   const newId = todo_list.length+count+1
-  delBtn.innerText = "Delete"
+  delBtn.innerText = "X"
   delBtn.addEventListener("click", deleteToDo)
   span.innerText = text
   li.appendChild(delBtn)

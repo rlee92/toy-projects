@@ -3,10 +3,7 @@
 @import "greeting.css";
 @import "todo.css";
 @import "weather.css";
-@import "image.css"; 
-
-/* @import "location.css";
-*/
+@import "image.css";
 
 html {
   background: #333333;
@@ -53,10 +50,22 @@ input:focus::placeholder {
     opacity: 0;
 }
 
+button {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: red;
+  font-size: 25px;
+}
+
 .center {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.form{
+  display: none;
 }
 
 .is-visible {
