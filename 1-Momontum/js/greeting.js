@@ -24,7 +24,7 @@ let requestName = _ => {
 let getGreetingMsg = (text) => {
   form.classList.remove(IS_VISIBLE)
   greeting.classList.add(IS_VISIBLE)
-  greeting.innerText = `Hello,  ${text}`
+  greeting.innerText = `Happy New Year, ${text}`
 }
 
 let loadName = _ => {

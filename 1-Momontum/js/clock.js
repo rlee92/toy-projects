@@ -14,7 +14,7 @@ let getTime = _ => {
 
 let initClock = _ => {
   getTime()
-  setInterval(getTime, 1000)
+  setInterval(getTime, 60000)
 }
 
 initClock()
