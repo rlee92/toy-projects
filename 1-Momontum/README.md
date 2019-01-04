@@ -7,3 +7,6 @@ A clone of Chrome extension [Momentum](https://chrome.google.com/webstore/detail
 - To Do List
 - Weather 
 - Background Image
+
+## Screenshot
+![Screenshot](https://github.com/rlee92/toy-projects/blob/master/1-Momontum/Momontum_example.png)
