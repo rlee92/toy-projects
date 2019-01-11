@@ -1,11 +1,14 @@
 # [Momontum](https://rlee92.github.io/)
 
-A clone of Chrome extension [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en) on Vanilla JavaScript
+A clone of Chrome extension [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en)
 
-## Features 
+## Built with
+- Vanilla JavaScript
+
+## Features
 - Clock
 - To Do List
-- Weather 
+- Weather
 - Background Image
 
 ## Screenshot
