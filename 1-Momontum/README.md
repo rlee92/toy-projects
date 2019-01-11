@@ -6,10 +6,11 @@ A clone of Chrome extension [Momentum](https://chrome.google.com/webstore/detail
 - Vanilla JavaScript
 
 ## Features
-- Clock
-- To Do List
-- Weather
-- Background Image
+- [x] Clock
+- [x] To Do List
+- [x] Weather
+- [x] Background Image
+- [ ] Responsive Design
 
 ## Screenshot
 ![Screenshot](https://github.com/rlee92/toy-projects/blob/master/1-Momontum/Momontum_example.png)
