@@ -1,0 +1,9 @@
+{
+  "name": "2-CineQL",
+  "version": "1.0.0",
+  "description": "Movie API with GraphQL",
+  "main": "index.js",
+  "repository": "https://github.com/rlee92/toy-projects/tree/master/2-CineQL",
+  "author": "Ryan Lee",
+  "license": "MIT"
+}
