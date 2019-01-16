@@ -1,3 +1,3 @@
 # CineQL_Client
 
-Client for the MovieQL API built with Apollo
+Client for the CineQL API built with Apollo
