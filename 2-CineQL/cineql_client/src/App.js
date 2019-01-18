@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
+import { HashRouter as Router, Route } from 'react-router-dom'
 import {ApolloProvider} from 'react-apollo'
 import client from './client'
+import Home from './home'
+import Detail from './detail'
 
 class App extends Component {
   render() {
-    return <ApolloProvider client={client}>
-      <div className="App" />
-    </ApolloProvider>
+    return (
+      <ApolloProvider client={client}>
+        <Router>
+          <React.Fragment>
+            <Route exact={true} path={'/'} component={Home} />
+            <Route path={'/details/:movieId'} component={Detail} />
+          </React.Fragment>
+        </Router>
+      </ApolloProvider>
+    );
   }
 }
 
