@@ -1,10 +1,10 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
-export const HOME_PAGE = gql`
+export const HOMEPAGE = gql`
   {
-    movies(limit: 50, rating: 7) {
-      id
+    movies(limit: 50, rating: 8) {
       title
+      rating
       genres
     }
   }
