@@ -1,4 +1,4 @@
-import ApolloCient from "apollo-boost"
+import ApolloCient from 'apollo-boost'
 
 const client = new ApolloCient({
   // Deploy required if I want to use my own
