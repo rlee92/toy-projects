@@ -33,7 +33,6 @@ const Movie = ({ id, title, rating, poster }) => (
     <Card background={poster}>
       <Title>
         {title} / {rating}
-        {id}
       </Title>
     </Card>
   </Link>
