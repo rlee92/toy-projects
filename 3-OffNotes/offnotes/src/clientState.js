@@ -1,5 +1,12 @@
 export const defaults = {
-    notes: []
+    notes: [
+        {
+            __typename:"Note",
+            id:1,
+            title:"First",
+            content:"Second"
+        }
+    ]
   };
   export const typeDefs = [
     `
@@ -24,6 +31,13 @@ export const defaults = {
   ];
   export const resolvers = {
     Query: {
-      notes: () => true
+      notes: (_, variables, { cache }) => {
+          const id = cache.config.dataIdFromObject({
+            __typename:"Note",
+              id: variables.id
+          });
+          console.log(id)
+          return null;
+      }
     }
   };
