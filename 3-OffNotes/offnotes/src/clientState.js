@@ -1,3 +1,5 @@
+import { NOTE_FRAGMENT } from "./fragments";
+
 export const defaults = {
     notes: [
         {
@@ -36,8 +38,8 @@ export const defaults = {
             __typename:"Note",
               id: variables.id
           });
-          console.log(id)
-          return null;
+          const note = cache.readFragment({fragment:NOTE_FRAGMENT, id})
+          return note;
       }
     }
   };
