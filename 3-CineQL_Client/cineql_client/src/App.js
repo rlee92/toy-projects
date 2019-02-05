@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 import client from './apolloClient'
-import Home from './Home'
-import Detail from './Detail'
+import Home from './home'
+import Detail from './detail'
 
 class App extends Component {
   render() {
